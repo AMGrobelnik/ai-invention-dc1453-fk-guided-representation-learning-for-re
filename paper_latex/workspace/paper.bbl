@@ -1,0 +1,145 @@
+\begin{thebibliography}{22}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ahuja et~al.(2023)Ahuja, Mahajan, Wang, and Bengio]{Ahuja2023}
+K.~Ahuja, D.~Mahajan, Y.~Wang, and Y.~Bengio.
+\newblock Interventional causal representation learning.
+\newblock In \emph{Proceedings of the 40th International Conference on Machine
+  Learning (ICML)}, volume 202, pages 372--407. PMLR, 2023.
+
+\bibitem[Arjovsky et~al.(2019)Arjovsky, Bottou, Gulrajani, and
+  Lopez-Paz]{Arjovsky2019}
+M.~Arjovsky, L.~Bottou, I.~Gulrajani, and D.~Lopez-Paz.
+\newblock Invariant risk minimization.
+\newblock \emph{arXiv preprint arXiv:1907.02893}, 2019.
+
+\bibitem[Chen et~al.(2023)Chen, Wei, Huang, Ding, and Li]{Chen2023}
+M.~Chen, Z.~Wei, Z.~Huang, B.~Ding, and Y.~Li.
+\newblock Edge directionality improves learning on heterophilic graphs.
+\newblock \emph{arXiv preprint arXiv:2305.10498}, 2023.
+
+\bibitem[Chen et~al.(2025)Chen, Kanatsoulis, and Leskovec]{Chen2025}
+T.~Chen, C.~I. Kanatsoulis, and J.~Leskovec.
+\newblock Relgnn: Composite message passing for relational deep learning.
+\newblock \emph{arXiv preprint arXiv:2502.06784}, 2025.
+
+\bibitem[Facure(2024)]{Facure2024}
+M.~Facure.
+\newblock Python causality handbook.
+\newblock Online, 2024.
+
+\bibitem[Gu et~al.(2026)Gu, Ranjan, Kanatsoulis, Tang, Jurkovic, Hudovernik,
+  {\v{Z}}nidar, Chaturvedi, Shroff, Li, and Leskovec]{Gu2026}
+J.~Gu, R.~Ranjan, C.~I. Kanatsoulis, H.~Tang, M.~Jurkovic, V.~Hudovernik,
+  M.~{\v{Z}}nidar, P.~Chaturvedi, P.~Shroff, F.~Li, and J.~Leskovec.
+\newblock Relbench v2: A large-scale benchmark and repository for relational
+  data.
+\newblock \emph{arXiv preprint arXiv:2602.12606}, 2026.
+
+\bibitem[Krueger et~al.(2021)Krueger, Caballero, Jacobsen, Zhang, Binas, Zhang,
+  Priol, and Courville]{Krueger2021}
+D.~Krueger, E.~Caballero, J.~H. Jacobsen, A.~Zhang, J.~Binas, D.~Zhang, R.~L.
+  Priol, and A.~Courville.
+\newblock Out-of-distribution generalization via risk extrapolation (rex).
+\newblock In \emph{Proceedings of the 38th International Conference on Machine
+  Learning (ICML)}, volume 139, pages 5815--5826. PMLR, 2021.
+
+\bibitem[Kunzel et~al.(2019)Kunzel, Sekhon, Bickel, and Yu]{Kunzel2019}
+S.~R. Kunzel, J.~S. Sekhon, P.~J. Bickel, and B.~Yu.
+\newblock Metalearners for estimating heterogeneous treatment effects using
+  machine learning.
+\newblock \emph{Proceedings of the National Academy of Sciences (PNAS)},
+  116\penalty0 (10):\penalty0 4156--4165, 2019.
+
+\bibitem[Li et~al.(2023)Li, Lin, Zhang, and Ren]{Li2023}
+Z.~Li, M.~Lin, Z.~Zhang, and S.~Ren.
+\newblock Irg: Modular synthetic relational database generation with complex
+  relational schemas.
+\newblock \emph{arXiv preprint arXiv:2312.15187}, 2023.
+
+\bibitem[Negro et~al.(2025)Negro, Meijer, and Roy]{Negro2025}
+G.~Negro, G.~Meijer, and S.~Roy.
+\newblock Relational causal discovery with latent confounders.
+\newblock In \emph{Proceedings of the 41st Conference on Uncertainty in
+  Artificial Intelligence (UAI)}, 2025.
+
+\bibitem[Pearl(2009)]{Pearl2009}
+J.~Pearl.
+\newblock \emph{Causality: Models, Reasoning, and Inference}.
+\newblock Cambridge University Press, 2nd edition, 2009.
+
+\bibitem[Ranjan et~al.(2025)Ranjan, Hudovernik, {\v{Z}}nidar, Kanatsoulis,
+  Upendra, Mohammadi, Meyer, Palczewski, Guestrin, and Leskovec]{Ranjan2025}
+R.~Ranjan, V.~Hudovernik, M.~{\v{Z}}nidar, C.~I. Kanatsoulis, R.~Upendra,
+  M.~Mohammadi, J.~Meyer, T.~Palczewski, C.~Guestrin, and J.~Leskovec.
+\newblock Relational transformer: Toward zero-shot foundation models for
+  relational data.
+\newblock \emph{arXiv preprint arXiv:2510.06377}, 2025.
+
+\bibitem[revision(2026)]{Previous2026}
+Previous revision.
+\newblock Interventional consistency learning for relational deep learning.
+\newblock \emph{arXiv preprint}, 2026.
+\newblock Acknowledged as introducing circular $\tau$ definition.
+
+\bibitem[Rubin(1990)]{Rubin1990}
+C.~Rubin.
+\newblock Randomization and social affairs: The lost lottery.
+\newblock \emph{Journal of Business \& Economic Statistics}, 8\penalty0
+  (4):\penalty0 355--368, 1990.
+
+\bibitem[Salimi et~al.(2020)Salimi, Parikh, Kayali, Roy, Getoor, and
+  Suciu]{Salimi2020}
+B.~Salimi, H.~Parikh, M.~Kayali, S.~Roy, L.~Getoor, and D.~Suciu.
+\newblock Causal relational learning.
+\newblock In \emph{Proceedings of the 2020 ACM SIGMOD International Conference
+  on Management of Data}, pages 1259--1276, 2020.
+
+\bibitem[Sanchez-Martin et~al.(2022)Sanchez-Martin, Beurer-Kellner, and
+  Vechev]{SanchezMartin2022}
+D.~Sanchez-Martin, L.~Beurer-Kellner, and M.~Vechev.
+\newblock Counterfactual explanations for graph neural networks.
+\newblock In \emph{Proceedings of the 39th International Conference on Machine
+  Learning (ICML)}, volume 162, pages 19488--19507. PMLR, 2022.
+
+\bibitem[Sch\"{o}lkopf et~al.(2020)Sch\"{o}lkopf, Muandet, Fukumizu, and
+  Peters]{Schoelkopf2020}
+B.~Sch\"{o}lkopf, K.~Muandet, K.~Fukumizu, and J.~Peters.
+\newblock Kernel methods for causal dose-response curves.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2020.
+
+\bibitem[VanderWeele and Shpitser(2013)]{VanderWeele2013}
+T.~J. VanderWeele and I.~Shpitser.
+\newblock Sensitivity analysis and unmeasured confounding.
+\newblock \emph{Statistical Science}, 28\penalty0 (2):\penalty0 147--165, 2013.
+
+\bibitem[Wang et~al.(2024)Wang, Sai, Deng, Cui, Liu, and Zhang]{Wang2024}
+X.~Wang, X.~Sai, S.~Deng, Z.~Cui, H.~Liu, and S.~Zhang.
+\newblock Towards data-centric machine learning on directed graphs: A survey.
+\newblock \emph{arXiv preprint arXiv:2412.01849}, 2024.
+
+\bibitem[Wu et~al.(2022)Wu, Chen, Dong, Wang, Zhu, and Cui]{Wu2022}
+J.~Wu, L.~Chen, Y.~Dong, X.~Wang, B.~Zhu, and S.~Cui.
+\newblock Discovering invariant rationales for graph neural networks.
+\newblock In \emph{Proceedings of the 31st International World Wide Web
+  Conference (WWW)}, pages 289--300, 2022.
+
+\bibitem[Zhang et~al.(2018)Zhang, Cisse, Dauphin, and Lopez-Paz]{Zhang2018}
+H.~Zhang, M.~Cisse, Y.~N. Dauphin, and D.~Lopez-Paz.
+\newblock Mixup: Beyond empirical risk minimization.
+\newblock In \emph{Proceedings of the 6th International Conference on Learning
+  Representations (ICLR)}, 2018.
+
+\bibitem[Zhu et~al.(2022)Zhu, Song, Tan, Liu, Li, Cen, and Ren]{Zhu2022}
+L.~Zhu, Y.~Song, Y.~Tan, Z.~Liu, X.~Li, D.~Cen, and K.~Ren.
+\newblock Learning causally invariant representations for out-of-distribution
+  generalization on graphs.
+\newblock In \emph{Proceedings of the 36th Conference on Neural Information
+  Processing Systems (NeurIPS)}, 2022.
+
+\end{thebibliography}
