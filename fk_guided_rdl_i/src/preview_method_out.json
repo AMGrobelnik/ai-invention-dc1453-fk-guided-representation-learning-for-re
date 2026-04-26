@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "method_name": "FK-Guided Representation Learning for Relational Deep Learning",
+    "description": "Interventional consistency loss for improving sample efficiency and cross-database generalization",
+    "hyperparameters": {
+      "hidden_dim": 64,
+      "learning_rate": 0.001,
+      "batch_size": 32,
+      "max_epochs": 50,
+      "causal_weight_alpha": 0.5
+    },
+    "hardware": {
+      "device": "cpu",
+      "num_cpus": 10,
+      "has_gpu": false
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "EricCRX_books_tabular_dataset",
+      "examples": [
+        {
+          "input": "Task: EricCRX_books_tabular_dataset, Variant: VariantA",
+          "output": "AUROC: 0.6000, F1: 0.7500, Accuracy: 0.7143",
+          "metadata_variant": "VariantA",
+          "metadata_auroc": 0.6,
+          "metadata_f1": 0.75,
+          "metadata_accuracy": 0.7142857142857143,
+          "predict_baseline_auroc": 0.6,
+          "predict_method_auroc": null
+        },
+        {
+          "input": "Task: EricCRX_books_tabular_dataset, Variant: VariantB",
+          "output": "AUROC: 0.4000, F1: 0.5000, Accuracy: 0.4286",
+          "metadata_variant": "VariantB",
+          "metadata_auroc": 0.4,
+          "metadata_f1": 0.5,
+          "metadata_accuracy": 0.42857142857142855,
+          "predict_baseline_auroc": null,
+          "predict_method_auroc": null
+        },
+        {
+          "input": "Task: EricCRX_books_tabular_dataset, Variant: VariantC",
+          "output": "AUROC: 0.4000, F1: 0.5000, Accuracy: 0.4286",
+          "metadata_variant": "VariantC",
+          "metadata_auroc": 0.4,
+          "metadata_f1": 0.5,
+          "metadata_accuracy": 0.42857142857142855,
+          "predict_baseline_auroc": null,
+          "predict_method_auroc": 0.4
+        }
+      ]
+    },
+    {
+      "dataset": "Nicolybgs_healthcare_data",
+      "examples": [
+        {
+          "input": "Task: Nicolybgs_healthcare_data, Variant: VariantA",
+          "output": "AUROC: 0.5000, F1: 0.5070, Accuracy: 0.6500",
+          "metadata_variant": "VariantA",
+          "metadata_auroc": 0.5,
+          "metadata_f1": 0.5070422535211268,
+          "metadata_accuracy": 0.65,
+          "predict_baseline_auroc": 0.5,
+          "predict_method_auroc": null
+        },
+        {
+          "input": "Task: Nicolybgs_healthcare_data, Variant: VariantB",
+          "output": "AUROC: 0.5000, F1: 0.3836, Accuracy: 0.5500",
+          "metadata_variant": "VariantB",
+          "metadata_auroc": 0.5,
+          "metadata_f1": 0.3835616438356164,
+          "metadata_accuracy": 0.55,
+          "predict_baseline_auroc": null,
+          "predict_method_auroc": null
+        },
+        {
+          "input": "Task: Nicolybgs_healthcare_data, Variant: VariantC",
+          "output": "AUROC: 0.5000, F1: 0.4384, Accuracy: 0.5900",
+          "metadata_variant": "VariantC",
+          "metadata_auroc": 0.5,
+          "metadata_f1": 0.4383561643835616,
+          "metadata_accuracy": 0.59,
+          "predict_baseline_auroc": null,
+          "predict_method_auroc": 0.5
+        }
+      ]
+    },
+    {
+      "dataset": "saifhmb_social_network_ads",
+      "examples": [
+        {
+          "input": "Task: saifhmb_social_network_ads, Variant: VariantA",
+          "output": "AUROC: 0.4898, F1: 0.3529, Accuracy: 0.4762",
+          "metadata_variant": "VariantA",
+          "metadata_auroc": 0.4897959183673469,
+          "metadata_f1": 0.35294117647058826,
+          "metadata_accuracy": 0.47619047619047616,
+          "predict_baseline_auroc": 0.4897959183673469,
+          "predict_method_auroc": null
+        },
+        {
+          "input": "Task: saifhmb_social_network_ads, Variant: VariantB",
+          "output": "AUROC: 0.6122, F1: 0.5882, Accuracy: 0.6667",
+          "metadata_variant": "VariantB",
+          "metadata_auroc": 0.6122448979591837,
+          "metadata_f1": 0.5882352941176471,
+          "metadata_accuracy": 0.6666666666666666,
+          "predict_baseline_auroc": null,
+          "predict_method_auroc": null
+        },
+        {
+          "input": "Task: saifhmb_social_network_ads, Variant: VariantC",
+          "output": "AUROC: 0.4388, F1: 0.3529, Accuracy: 0.4762",
+          "metadata_variant": "VariantC",
+          "metadata_auroc": 0.43877551020408156,
+          "metadata_f1": 0.35294117647058826,
+          "metadata_accuracy": 0.47619047619047616,
+          "predict_baseline_auroc": null,
+          "predict_method_auroc": 0.43877551020408156
+        }
+      ]
+    }
+  ]
+}

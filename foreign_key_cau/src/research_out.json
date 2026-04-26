@@ -1,0 +1,116 @@
+{
+  "title": "Foreign Key Causal Effect Estimation in Relational Databases",
+  "summary": "This research synthesizes relational causal discovery (CARL [1], RelFCI [2]), causal GNNs (CIGA [3]), and relational deep learning (RelBench [4], RelGNN [5]) to operationalize foreign key (FK)-guided causal effect (\u03c4) estimation in multi-table databases. Three \u03c4 estimation strategies: (1) linear regression for data-efficient empirical estimation [6]; (2) CARL integration for confounder-aware discovery via d-separation [1]; (3) kernel ridge regression for nonparametric dose-response curves [7]. A validity framework checks temporal ordering, domain knowledge alignment, and effect consistency. Key limitations: unmeasured confounding [8], nonlinearity [9], CARL scalability [2], causal sufficiency [10]. Recommendations: default to ATE over ITE; use CATE when heterogeneous effects expected; conduct sensitivity analysis for unmeasured confounders.",
+  "answer": "Foreign Key-Guided Causal Effect Estimation for Relational Deep Learning\n\nCORE FINDING 1: DISTINCTION BETWEEN FK CAUSALITY AND CAUSAL GNNs\n\nCIGA [3] and DIR [11] learn causal features via invariance across distribution shifts. Relational FK causality exploits pre-declared schema directionality. FKs encode parent\u2192child links where temporal precedence is typically assumed [12]. Causal GNNs require distributional heterogeneity; FK approaches require temporal ordering and schema semantics. Complementarity: FK structure could seed causal GNN initialization, improving sample efficiency [3].\n\nCORE FINDING 2: THREE \u03c4 ESTIMATION STRATEGIES\n\nStrategy A: Linear Regression [6, 13] \u2014 Fits Y = \u03b2\u2080 + \u03a3 \u03b2\u1d62 \u00d7 parent_attr\u1d62 + \u03b5 [13]. Interpretable coefficients, asymptotically efficient for ATE [6]. Limitation: assumes linearity [6].\n\nStrategy B: CARL-Hybrid [1, 2] \u2014 Two-stage: (1) d-separation discovers confounding set Z [1]; (2) fit Y ~ parent_attrs[Z]. Removes confounders via graphical criteria [14]. Limitation: computationally expensive on large schemas [2].\n\nStrategy C: Kernel Ridge Regression [7, 9] \u2014 Nonparametric \u0177 = K(K + \u03bbI)\u207b\u00b9y handles nonlinearity [7, 9]. Limitation: requires n > p\u00b2; O(n\u00b3) complexity [7].\n\nCORE FINDING 3: ATE VS. CATE VS. ITE\n\nATE (Average Treatment Effect): single scalar \u03c4_avg. Low variance, default choice. CATE (Conditional ATE): \u03c4(z) varies by subgroup [15]. ITE (Individual Treatment Effect): per-row \u03c4\u2c7c; high variance, overfits unless n > 50K [15]. Recommendation: Default ATE for interventional loss; CATE as secondary; avoid ITE unless massive data [15].\n\nCORE FINDING 4: FK\u2192CAUSALITY VALIDITY FRAMEWORK\n\nThree essential checks:\n\n1. Temporal Ordering [12]: parent.created_at < child.created_at for \u226595% of rows validates directionality [12].\n\n2. Domain Knowledge Alignment [3]: Learned \u03c4 sign/magnitude match expert expectations. Target: \u226560% of parent columns pass [3].\n\n3. Effect Consistency [15]: Refit on k-fold splits. Verify \u03c4 signs stable across folds. Target: \u226580% attributes show 100% consistency [15].\n\nCORE FINDING 5: LITERATURE SYNTHESIS\n\nCARL [1] provides d-separation framework for relational causal discovery. RelFCI [2] extends to latent confounders (sound, complete). RelBench [4] provides 11 datasets (22M+ rows, 66 tasks) as empirical testbed. RelGNN [5] demonstrates FK directionality encodes in GNN architecture via atomic routes. Linear regression [6] is asymptotically efficient for ATE; kernel methods [7, 9] handle nonlinearity; double ML [16] extends inference to high-dimensional covariates. Pearl's backdoor criterion [14] grounds confounder adjustment. Sensitivity analysis bounds bias from unmeasured confounders [8, 10].\n\nCORE FINDING 6: CRITICAL LIMITATIONS\n\nUnmeasured Confounding [8, 10]: Cannot identify unmeasured confounders. Mitigation: RelFCI [2]; sensitivity analysis [8]; instrumental variables [8].\n\nNonlinearity [7, 9]: Linear \u03c4 assumes E[Y|Parent] linear. Mitigation: kernel methods/causal forests [7, 9].\n\nScalability [2, 17]: CARL d-separation exponential in hops. Large schemas need sampling-based approximations [17].\n\nMissing Temporal Data [12]: Without timestamps, assume schema DAG order; sensitivity analysis [12].\n\nWORKED EXAMPLE: E-COMMERCE\n\nCustomers (age, loyalty) \u2192 Orders (order_amount) via FK.\n\nLinear fit [6, 13]: order_amount = 50 + 2.0\u00d7age + 3.5\u00d7loyalty \u2212 0.5\u00d7account_age + \u03b5\n\nIntervention: age + 5 years \u2192 \u03c4 = $10 average increase [6, 13]\n\nValidation: Temporal (95%+ customers before orders \u2713) [12]; Domain (expert expects +$0\u2013$20 \u2713) [3].\n\nKEY RECOMMENDATIONS\n\n1. Start with Strategy A (linear) for interpretability [6, 13].\n2. Adopt validity framework (temporal, domain, consistency) before claiming causal effects [12, 3, 15].\n3. Use ATE for interventional loss [15].\n4. Conduct sensitivity analysis for unmeasured confounding [8].\n5. Integrate with causal GNNs: FK priors improve CIGA/DIR [3, 11].",
+  "sources": [
+    {
+      "index": 1,
+      "url": "https://arxiv.org/abs/2004.03644",
+      "title": "Causal Relational Learning (CARL)",
+      "summary": "Declarative language for causal inference on relational data; d-separation queries identify confounders in multi-table schemas."
+    },
+    {
+      "index": 2,
+      "url": "https://arxiv.org/abs/2507.01700",
+      "title": "Relational Causal Discovery with Latent Confounders (RelFCI)",
+      "summary": "Sound and complete causal discovery for relational data with latent confounders via LRCMs, MAAGGs, PAAGGs."
+    },
+    {
+      "index": 3,
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/file/8b21a7ea42cbcd1c29a7a88c444cce45-Paper-Conference.pdf",
+      "title": "Learning Causally Invariant Representations for OOD Generalization on Graphs (CIGA)",
+      "summary": "SCM-based framework for learning invariant subgraphs; causal GNNs learn via invariance (topological)."
+    },
+    {
+      "index": 4,
+      "url": "https://arxiv.org/abs/2407.20060",
+      "title": "RelBench: A Benchmark for Deep Learning on Relational Databases",
+      "summary": "11 large-scale relational databases (22M+ rows, 66 tasks) spanning medical, e-commerce, ERP domains."
+    },
+    {
+      "index": 5,
+      "url": "https://arxiv.org/abs/2502.06784",
+      "title": "RelGNN: Composite Message Passing for Relational Deep Learning",
+      "summary": "Atomic routes (FK-derived paths) and composite message passing encode FK directionality in GNN architecture."
+    },
+    {
+      "index": 6,
+      "url": "https://matheusfacure.github.io/python-causality-handbook/05-The-Unreasonable-Effectiveness-of-Linear-Regression.html",
+      "title": "The Unreasonable Effectiveness of Linear Regression for Causal Inference",
+      "summary": "Linear regression asymptotically efficient for ATE; interpretable coefficients and practical foundation for \u03c4 estimation."
+    },
+    {
+      "index": 7,
+      "url": "https://arxiv.org/abs/2010.04855",
+      "title": "Kernel Methods for Causal Dose-Response Curves",
+      "summary": "Kernel ridge regression for nonparametric causal dose-response with RKHS closed-form solutions."
+    },
+    {
+      "index": 8,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8786092/",
+      "title": "Confounding Bias in Observational Studies",
+      "summary": "Treatment of confounding; identifies unmeasured confounders as fundamental limitation; sensitivity analysis methods."
+    },
+    {
+      "index": 9,
+      "url": "https://arxiv.org/html/2604.13410",
+      "title": "Causal Inference with Continuous Treatments and Heterogeneous Effects",
+      "summary": "Two-stage kernel ridge regression for nonparametric heterogeneous treatment effects estimation."
+    },
+    {
+      "index": 10,
+      "url": "https://www.tandfonline.com/doi/full/10.1080/00273171.2025.2507742",
+      "title": "Causal Sufficiency Assumption and Its Violations",
+      "summary": "Formal treatment of causal sufficiency; assumption untestable and often violated in practice."
+    },
+    {
+      "index": 11,
+      "url": "https://hexiangnan.github.io/papers/iclr22-invariant-gnn.pdf",
+      "title": "Discovering Invariant Rationales for GNNs (DIR-GNN)",
+      "summary": "Identifies invariant features via interventions; causal GNN approach differs from FK-declared causality."
+    },
+    {
+      "index": 12,
+      "url": "https://appliedcausalinference.github.io/aci_book/08-time-dependent-causal-inference.html",
+      "title": "Temporal Ordering in Causal Inference",
+      "summary": "Temporal precedence as fundamental causal principle; temporal asymmetry for causal identification."
+    },
+    {
+      "index": 13,
+      "url": "https://sites.stat.columbia.edu/gelman/arm/chap9.pdf",
+      "title": "Regression-based Estimation of Treatment Effects",
+      "summary": "Practical guide to linear regression for causal effect estimation; conditional expectation framework."
+    },
+    {
+      "index": 14,
+      "url": "https://datascience.oneoffcoder.com/backdoor-criterion.html",
+      "title": "Backdoor Criterion for Causal Effect Identification",
+      "summary": "Pearl's graphical criterion for confounder adjustment; blocks non-causal paths between treatment and outcome."
+    },
+    {
+      "index": 15,
+      "url": "https://www.pnas.org/doi/10.1073/pnas.1804597116",
+      "title": "Metalearners for Heterogeneous Treatment Effects",
+      "summary": "Metalearner framework for CATE and ITE; guidance on ATE vs. ITE trade-offs in causal inference."
+    },
+    {
+      "index": 16,
+      "url": "https://arxiv.org/abs/1608.00060",
+      "title": "Double/Debiased Machine Learning for Treatment and Causal Parameters",
+      "summary": "Framework for causal inference with flexible ML models via orthogonalization and cross-fitting."
+    },
+    {
+      "index": 17,
+      "url": "https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2019.00524/full",
+      "title": "Scalable Causal Discovery Algorithms",
+      "summary": "Scalable variants of FCI and PC algorithms; sampling-based approximations for large graphs."
+    }
+  ],
+  "follow_up_questions": [
+    "How sensitive are \u03c4 estimates to linearity violations? Characterize when kernel methods become necessary across RelBench tasks.",
+    "For multi-hop FK paths (customer\u2192order\u2192product), does causal composition hold? Can we estimate multi-hop \u03c4 via path decomposition?",
+    "Can FK priors improve causal GNN sample efficiency? Validate whether RelFCI-discovered confounders reduce CIGA/DIR sample complexity.",
+    "How do temporal dynamics affect FK causality validity? Do methods extend to temporal relational data with evolving relationships?",
+    "Can domain knowledge bounds be automatically inferred from \u03c4 distributions? Can sensitivity analysis inform domain_knowledge dict?"
+  ]
+}
