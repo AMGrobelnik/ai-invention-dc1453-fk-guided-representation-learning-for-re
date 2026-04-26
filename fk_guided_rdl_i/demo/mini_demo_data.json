@@ -1,0 +1,12 @@
+[
+  {"Length_cm": 24.1, "Width_cm": 16.3, "Thickness_cm": 3.8, "Pages": 737, "Hardcover": "No", "Cover_Color": "Yellow", "Is_Textbook": "Yes"},
+  {"Length_cm": 26.1, "Width_cm": 17.5, "Thickness_cm": 3.1, "Pages": 768, "Hardcover": "Yes", "Cover_Color": "Brown", "Is_Textbook": "Yes"},
+  {"Length_cm": 18.5, "Width_cm": 15.7, "Thickness_cm": 4.8, "Pages": 633, "Hardcover": "Yes", "Cover_Color": "Yellow", "Is_Textbook": "Yes"},
+  {"Length_cm": 20.0, "Width_cm": 16.8, "Thickness_cm": 4.2, "Pages": 656, "Hardcover": "Yes", "Cover_Color": "Blue", "Is_Textbook": "Yes"},
+  {"Length_cm": 25.4, "Width_cm": 17.0, "Thickness_cm": 1.8, "Pages": 195, "Hardcover": "Yes", "Cover_Color": "Red", "Is_Textbook": "No"},
+  {"Length_cm": 20.1, "Width_cm": 13.5, "Thickness_cm": 1.6, "Pages": 263, "Hardcover": "Yes", "Cover_Color": "Black", "Is_Textbook": "Yes"},
+  {"Length_cm": 24.0, "Width_cm": 13.9, "Thickness_cm": 2.1, "Pages": 549, "Hardcover": "No", "Cover_Color": "Blue", "Is_Textbook": "Yes"},
+  {"Length_cm": 23.6, "Width_cm": 16.3, "Thickness_cm": 3.6, "Pages": 784, "Hardcover": "Yes", "Cover_Color": "Black", "Is_Textbook": "No"},
+  {"Length_cm": 26.8, "Width_cm": 15.9, "Thickness_cm": 4.5, "Pages": 253, "Hardcover": "No", "Cover_Color": "Blue", "Is_Textbook": "Yes"},
+  {"Length_cm": 23.5, "Width_cm": 14.3, "Thickness_cm": 3.9, "Pages": 416, "Hardcover": "Yes", "Cover_Color": "Yellow", "Is_Textbook": "Yes"}
+]
